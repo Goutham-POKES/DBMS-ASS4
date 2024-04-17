@@ -1,11 +1,11 @@
-import mysql.connector as MSQC
+import mysql.connector as MC
 
 try:
     print("Enter host")
     hname, uname, pname = input("Host: "), input("User: "), input("Password: ")
-    connection = MSQC.connect(host=hname, user=uname, password=pname, database='academic_insti')
+    connection = MC.connect(host=hname, user=uname, password=pname, database='academic_insti')
     print("Database connected")
-except MSQC.Error as error:
+except MC.Error as error:
     print("Failed to connect to the database: {}".format(error))
 
 cursor = connection.cursor()
